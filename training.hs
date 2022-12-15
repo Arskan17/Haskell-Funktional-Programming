@@ -60,3 +60,12 @@ getCar f = f Zero
 zp xs ys = [(x,y)| x<-xs, y<-ys]
 zp' xs ys = [((xs)!!i,(ys)!!i) | i<-[0..z]]
             where z = min (length xs-1) (length ys-1)
+
+
+
+gn 0 = []
+gn 1 = [Leaf 1]
+gn n = [Node l r | k<-[1..n-1], l<- gn k, r<- gn (n-k)]
+
+g :: Num a=> a
+g = 1
