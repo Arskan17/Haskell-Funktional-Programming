@@ -28,6 +28,7 @@ pos x xs = [b | (a,b) <- zip xs [0..], a == x]
 
 -- counts the nu of times something appears in a list
 cnt x xs = length [a | a <- xs, a == x]
+          -- length(filter (==True) ([any (==x) [a] | a <- xs]))
 
 
 -- pyth searches for triples of a certain number that satisfies pythagora's theorem

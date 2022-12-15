@@ -44,3 +44,19 @@ twins = filter twin (zip primes (tail primes))
 -- checks if two lists, more specifically lists of characters are equal, whether they're the same letter case or not. 
 eqls xs ys = if length xs == length ys then (and [toLower (xs!!i) == ys!!i || toLower (ys!!i) == xs!!i || xs!!i == ys!!i |  i<-[0..(length xs)-1]])
                 else False
+
+
+
+type Audi = String
+type Zero = String
+
+data  Money = Zero
+data Car = Audi deriving Show
+
+getCar :: (Money -> Car) -> Car
+getCar f = f Zero
+
+
+zp xs ys = [(x,y)| x<-xs, y<-ys]
+zp' xs ys = [((xs)!!i,(ys)!!i) | i<-[0..z]]
+            where z = min (length xs-1) (length ys-1)
